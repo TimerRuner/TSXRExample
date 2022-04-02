@@ -1,0 +1,78 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 0 0 0;
+    padding: 3rem;
+}
+
+.blocks {
+    display: flex;
+    div {
+        margin-right: 5rem;
+    }
+}
+
+.blocks .square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+
+.square.blue {
+    background: cornflowerblue;
+}
+
+.square.orange {
+    background: coral;
+}
+
+//**Класи, що задаються бібліотекою при виконання анімації компонентом transition*/
+.square.entering {
+    animation: square 1000ms ease-out forwards;
+}
+.square.exiting {
+    animation: square 500ms ease-in alternate-reverse;
+}
+.square.exited {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+//**Класи, що задаються бібліотекою при виконання анімації компонентом СSStransition*/
+.os-enter {
+    opacity: 0;
+}
+.os-enter-active {
+    opacity: 1;
+    transition: opacity 1s;
+}
+// .os-enter-done {
+//     transform: translateX(0);
+// }
+
+.os-exit {
+    opacity: 1;
+}
+.os-exit-active {
+    opacity: 0;
+    transition: opacity 1s;
+}
+.os-exit-done {
+    opacity: 0;
+}
+
+@keyframes square {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
