@@ -1,0 +1,39 @@
+.menuItemsList {
+    padding: 0 20px;
+}
+
+.menuItem {
+    padding: 12px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.menuItem > svg + span {
+    margin-left: 7px;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--greyEC);
+}
+.desktop {
+    display: none;
+}
+
+@media all and (min-width: 1024px) {
+    .desktop {
+        display: block;
+    }
+    .menuItem {
+        padding: 5px 0;
+    }
+    .menuItem:hover path,
+    .menuItem:hover span {
+        fill: var(--orange);
+        color: var(--orange);
+    }
+    .menuItemsList {
+        padding: 11px 20px;
+    }
+}
