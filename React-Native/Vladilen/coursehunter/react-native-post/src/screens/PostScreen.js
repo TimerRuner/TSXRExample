@@ -52,24 +52,6 @@ export const PostScreen = ({ route: { params } }) => {
     )
 }
 
-PostScreen.navigationOptions = ({ route: { params } }) => {
-    const date = params.date
-    const booked = params.booked
-    const iconName = booked ? "ios-star" : "ios-star-outline"
-    return {
-        headerTitle: "Пост от " + new Date(date).toLocaleDateString(),
-        headerRight: (
-            <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
-                <Item
-                    title="Take photo"
-                    iconName={iconName}
-                    onPress={() => console.log("Press photo")}
-                />
-            </HeaderButtons>
-        ),
-    }
-}
-
 const styles = StyleSheet.create({
     image: {
         width: "100%",

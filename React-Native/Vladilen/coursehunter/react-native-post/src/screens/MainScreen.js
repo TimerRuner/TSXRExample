@@ -27,8 +27,6 @@ export const MainScreen = ({ navigation }) => {
     )
 }
 
-MainScreen.navigationOptions = {}
-
 const styles = StyleSheet.create({
     wrapper: {
         padding: 10,
