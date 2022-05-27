@@ -56,11 +56,13 @@ export const TodoState = ({ children }) => {
                     onPress: async () => {
                         changeScreen(null)
                         try {
-                            await Http.delete(
-                                `https://react-native-todo-app-c186f-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`
-                            )
+                            if (state.todos.length > 1) {
+                                await Http.delete(
+                                    `https://react-native-todo-app-c186f-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`
+                                )
 
-                            dispatch({ type: REMOVE_TODO, id })
+                                dispatch({ type: REMOVE_TODO, id })
+                            }
                         } catch (error) {
                             showError("Smth wrong...")
                         }
